@@ -20,8 +20,8 @@
   description = "Nix flake for acmsl/licdata-iac-infrastructure";
   inputs = rec {
     acmsl-licdata-artifact-events = {
-      inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
+      inputs.nixos.follows = "nixos";
       inputs.pythoneda-shared-pythonlang-banner.follows =
         "pythoneda-shared-pythonlang-banner";
       inputs.pythoneda-shared-pythonlang-domain.follows =
@@ -29,8 +29,8 @@
       url = "github:acmsl-def/licdata-artifact-events/0.0.10";
     };
     acmsl-licdata-artifact-events-infrastructure = {
-      inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
+      inputs.nixos.follows = "nixos";
       inputs.acmsl-licdata-artifact-events.follows = "acmsl-licdata-artifact-events";
       inputs.pythoneda-shared-pythonlang-banner.follows =
         "pythoneda-shared-pythonlang-banner";
@@ -39,8 +39,8 @@
       url = "github:acmsl-def/licdata-artifact-events-infrastructure/0.0.11";
     };
     acmsl-licdata-iac-domain = {
-      inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
+      inputs.nixos.follows = "nixos";
       inputs.pythoneda-shared-pythonlang-banner.follows =
         "pythoneda-shared-pythonlang-banner";
       inputs.pythoneda-shared-pythonlang-domain.follows =
@@ -48,13 +48,13 @@
       inputs.pythoneda-shared-iac-events.follows = "pythoneda-shared-iac-events";
       inputs.pythoneda-shared-iac-pulumi-azure.follows = "pythoneda-shared-iac-pulumi-azure";
       inputs.pythoneda-shared-iac-shared.follows = "pythoneda-shared-iac-shared";
-      url = "github:acmsl-def/licdata-iac-domain/0.0.14";
+      url = "github:acmsl-def/licdata-iac-domain/0.0.15";
     };
     flake-utils.url = "github:numtide/flake-utils/v1.0.0";
     nixos.url = "github:NixOS/nixpkgs/24.05";
     pythoneda-shared-iac-events = {
-      inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
+      inputs.nixos.follows = "nixos";
       inputs.pythoneda-shared-pythonlang-banner.follows =
         "pythoneda-shared-pythonlang-banner";
       inputs.pythoneda-shared-pythonlang-domain.follows =
@@ -62,8 +62,8 @@
       url = "github:pythoneda-shared-iac-def/events/0.0.7";
     };
     pythoneda-shared-iac-pulumi-azure = {
-      inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
+      inputs.nixos.follows = "nixos";
       inputs.pythoneda-shared-iac-events.follows = "pythoneda-shared-iac-events";
       inputs.pythoneda-shared-iac-shared.follows = "pythoneda-shared-iac-shared";
       inputs.pythoneda-shared-pythonlang-banner.follows =
@@ -73,8 +73,8 @@
       url = "github:pythoneda-shared-iac-def/pulumi-azure/0.0.10";
     };
     pythoneda-shared-iac-shared = {
-      inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
+      inputs.nixos.follows = "nixos";
       inputs.pythoneda-shared-pythonlang-banner.follows =
         "pythoneda-shared-pythonlang-banner";
       inputs.pythoneda-shared-pythonlang-domain.follows =
@@ -82,8 +82,8 @@
       url = "github:pythoneda-shared-iac-def/shared/0.0.7";
     };
     pythoneda-shared-pythonlang-banner = {
-      inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
+      inputs.nixos.follows = "nixos";
       url = "github:pythoneda-shared-pythonlang-def/banner/0.0.71";
     };
     pythoneda-shared-pythonlang-domain = {
@@ -220,7 +220,7 @@
       in rec {
         defaultPackage = packages.default;
         devShells = rec {
-          default = acmsl-licdata-iac-infrastructure-python312;
+          default = acmsl-licdata-iac-infrastructure-python311;
           acmsl-licdata-iac-infrastructure-python39 =
             shared.devShell-for {
               banner = "${packages.acmsl-licdata-iac-infrastructure-python39}/bin/banner.sh";
@@ -288,7 +288,7 @@
             };
         };
         packages = rec {
-          default = acmsl-licdata-iac-infrastructure-python312;
+          default = acmsl-licdata-iac-infrastructure-python311;
           acmsl-licdata-iac-infrastructure-python39 =
             acmsl-licdata-iac-infrastructure-for {
               acmsl-licdata-artifact-events = acmsl-licdata-artifact-events.packages.${system}.acmsl-licdata-artifact-events-python39;
