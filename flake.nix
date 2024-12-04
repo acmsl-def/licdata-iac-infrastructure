@@ -48,7 +48,7 @@
       inputs.pythoneda-shared-iac-events.follows = "pythoneda-shared-iac-events";
       inputs.pythoneda-shared-iac-pulumi-azure.follows = "pythoneda-shared-iac-pulumi-azure";
       inputs.pythoneda-shared-iac-shared.follows = "pythoneda-shared-iac-shared";
-      url = "github:acmsl-def/licdata-iac-domain/0.0.16";
+      url = "github:acmsl-def/licdata-iac-domain/0.0.17";
     };
     flake-utils.url = "github:numtide/flake-utils/v1.0.0";
     nixos.url = "github:NixOS/nixpkgs/24.05";
