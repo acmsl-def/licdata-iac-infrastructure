@@ -109,8 +109,8 @@
       let
         org = "acmsl";
         repo = "licdata-iac-infrastructure";
-        version = "0.0.11";
-        sha256 = "06s7b44aly1np6af9mrg700zl4d75yjfsfx078jvj90g5splsnri";
+        version = "0.0.12";
+        sha256 = "12akbnhagh2z861z3jn32q4snyq6md7jgwdfncwj7bswsfsmk2i4";
         pname = "${org}-${repo}";
         pythonpackage = "org.acmsl.iac.licdata.infrastructure";
         package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
