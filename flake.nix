@@ -61,6 +61,15 @@
         "pythoneda-shared-pythonlang-domain";
       url = "github:pythoneda-shared-iac-def/events/0.0.16";
     };
+    pythoneda-shared-iac-events-infrastructure = {
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.pythoneda-shared-pythonlang-banner.follows =
+        "pythoneda-shared-pythonlang-banner";
+      inputs.pythoneda-shared-pythonlang-domain.follows =
+        "pythoneda-shared-pythonlang-domain";
+      url = "github:pythoneda-shared-iac-def/events-infrastructure/0.0.1";
+    };
     pythoneda-shared-iac-pulumi-azure = {
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -150,6 +159,7 @@
           , acmsl-licdata-iac-domain
           , python
           , pythoneda-shared-iac-events
+          , pythoneda-shared-iac-events-infrastructure
           , pythoneda-shared-iac-pulumi-azure
           , pythoneda-shared-iac-shared
           , pythoneda-shared-pythonlang-banner
@@ -183,6 +193,7 @@
               acmslLicdataArtifactEventsInfrastructure = acmsl-licdata-artifact-events-infrastructure.version;
               acmslLicdataIacDomain = acmsl-licdata-iac-domain.version;
               pythonedaSharedIacEvents = pythoneda-shared-iac-events.version;
+              pythonedaSharedIacEventsInfrastructure = pythoneda-shared-iac-events-infrastructure.version;
               pythonedaSharedIacPulumiAzure = pythoneda-shared-iac-pulumi-azure.version;
               pythonedaSharedIacShared = pythoneda-shared-iac-shared.version;
               pythonedaSharedPythonlangBanner =
@@ -214,6 +225,7 @@
               acmsl-licdata-artifact-events-infrastructure
               acmsl-licdata-iac-domain
               pythoneda-shared-iac-events
+              pythoneda-shared-iac-events-infrastructure
               pythoneda-shared-iac-pulumi-azure
               pythoneda-shared-iac-shared
               pythoneda-shared-pythonlang-banner
@@ -330,6 +342,8 @@
               python = pkgs.python39;
               pythoneda-shared-iac-events =
                 pythoneda-shared-iac-events.packages.${system}.pythoneda-shared-iac-events-python39;
+              pythoneda-shared-iac-events-infrastructure =
+                pythoneda-shared-iac-events-infrastructure.packages.${system}.pythoneda-shared-iac-events-infrastructure-python39;
               pythoneda-shared-iac-pulumi-azure =
                 pythoneda-shared-iac-pulumi-azure.packages.${system}.pythoneda-shared-iac-pulumi-azure-python39;
               pythoneda-shared-iac-shared =
@@ -353,6 +367,8 @@
               python = pkgs.python310;
               pythoneda-shared-iac-events =
                 pythoneda-shared-iac-events.packages.${system}.pythoneda-shared-iac-events-python310;
+              pythoneda-shared-iac-events-infrastructure =
+                pythoneda-shared-iac-events-infrastructure.packages.${system}.pythoneda-shared-iac-events-infrastructure-python310;
               pythoneda-shared-iac-pulumi-azure =
                 pythoneda-shared-iac-pulumi-azure.packages.${system}.pythoneda-shared-iac-pulumi-azure-python310;
               pythoneda-shared-iac-shared =
@@ -376,6 +392,8 @@
               python = pkgs.python311;
               pythoneda-shared-iac-events =
                 pythoneda-shared-iac-events.packages.${system}.pythoneda-shared-iac-events-python311;
+              pythoneda-shared-iac-events-infrastructure =
+                pythoneda-shared-iac-events-infrastructure.packages.${system}.pythoneda-shared-iac-events-infrastructure-python311;
               pythoneda-shared-iac-pulumi-azure =
                 pythoneda-shared-iac-pulumi-azure.packages.${system}.pythoneda-shared-iac-pulumi-azure-python311;
               pythoneda-shared-iac-shared =
@@ -399,6 +417,8 @@
               python = pkgs.python312;
               pythoneda-shared-iac-events =
                 pythoneda-shared-iac-events.packages.${system}.pythoneda-shared-iac-events-python312;
+              pythoneda-shared-iac-events-infrastructure =
+                pythoneda-shared-iac-events-infrastructure.packages.${system}.pythoneda-shared-iac-events-infrastructure-python312;
               pythoneda-shared-iac-pulumi-azure =
                 pythoneda-shared-iac-pulumi-azure.packages.${system}.pythoneda-shared-iac-pulumi-azure-python312;
               pythoneda-shared-iac-shared =
@@ -423,6 +443,8 @@
               python = pkgs.python313;
               pythoneda-shared-iac-events =
                 pythoneda-shared-iac-events.packages.${system}.pythoneda-shared-iac-events-python313;
+              pythoneda-shared-iac-events-infrastructure =
+                pythoneda-shared-iac-events-infrastructure.packages.${system}.pythoneda-shared-iac-events-infrastructure-python313;
               pythoneda-shared-iac-pulumi-azure =
                 pythoneda-shared-iac-pulumi-azure.packages.${system}.pythoneda-shared-iac-pulumi-azure-python313;
               pythoneda-shared-iac-shared =
