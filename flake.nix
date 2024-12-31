@@ -192,6 +192,7 @@
               acmslLicdataArtifactEvents = acmsl-licdata-artifact-events.version;
               acmslLicdataArtifactEventsInfrastructure = acmsl-licdata-artifact-events-infrastructure.version;
               acmslLicdataIacDomain = acmsl-licdata-iac-domain.version;
+              azureMgmtResource = python.pkgs.azure-mgmt-resource.version;
               pythonedaSharedIacEvents = pythoneda-shared-iac-events.version;
               pythonedaSharedIacEventsInfrastructure = pythoneda-shared-iac-events-infrastructure.version;
               pythonedaSharedIacPulumiAzure = pythoneda-shared-iac-pulumi-azure.version;
@@ -207,7 +208,7 @@
               pythonedaSharedRuntimeSecretsEventsInfrastructure =
                 pythoneda-shared-runtime-secrets-events-infrastructure.version;
               pulumi = python.pkgs.pulumi.version;
-              pulumiAzureNative = pkgs.python312Packages.pulumi-azure-native.version;
+              pulumiAzureNative = python.pkgs.pulumi-azure-native.version;
               src = pyprojectTomlTemplate;
             };
 
@@ -224,6 +225,7 @@
               acmsl-licdata-artifact-events
               acmsl-licdata-artifact-events-infrastructure
               acmsl-licdata-iac-domain
+              azure-mgmt-resource
               pythoneda-shared-iac-events
               pythoneda-shared-iac-events-infrastructure
               pythoneda-shared-iac-pulumi-azure
@@ -268,7 +270,9 @@
           default = acmsl-licdata-iac-infrastructure-python311;
           acmsl-licdata-iac-infrastructure-python39 =
             shared.devShell-for {
-              banner = "${packages.acmsl-licdata-iac-infrastructure-python39}/bin/banner.sh";
+              banner = "${
+                pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python39
+              }/bin/banner.sh";
               extra-namespaces = "org";
               nixpkgs-release = nixpkgsRelease;
               package = packages.acmsl-licdata-iac-infrastructure-python39;
@@ -281,7 +285,9 @@
             };
           acmsl-licdata-iac-infrastructure-python310 =
             shared.devShell-for {
-              banner = "${packages.acmsl-licdata-iac-infrastructure-python310}/bin/banner.sh";
+              banner = "${
+                pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python310
+              }/bin/banner.sh";
               extra-namespaces = "org";
               nixpkgs-release = nixpkgsRelease;
               package = packages.acmsl-licdata-iac-infrastructure-python310;
@@ -294,7 +300,9 @@
             };
           acmsl-licdata-iac-infrastructure-python311 =
             shared.devShell-for {
-              banner = "${packages.acmsl-licdata-iac-infrastructure-python311}/bin/banner.sh";
+              banner = "${
+                pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python311
+              }/bin/banner.sh";
               extra-namespaces = "org";
               nixpkgs-release = nixpkgsRelease;
               package = packages.acmsl-licdata-iac-infrastructure-python311;
@@ -307,7 +315,9 @@
             };
           acmsl-licdata-iac-infrastructure-python312 =
             shared.devShell-for {
-              banner = "${packages.acmsl-licdata-iac-infrastructure-python312}/bin/banner.sh";
+              banner = "${
+                pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python312
+              }/bin/banner.sh";
               extra-namespaces = "org";
               nixpkgs-release = nixpkgsRelease;
               package = packages.acmsl-licdata-iac-infrastructure-python312;
@@ -320,7 +330,9 @@
             };
           acmsl-licdata-iac-infrastructure-python313 =
             shared.devShell-for {
-              banner = "${packages.acmsl-licdata-iac-infrastructure-python313}/bin/banner.sh";
+              banner = "${
+                pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python313
+              }/bin/banner.sh";
               extra-namespaces = "org";
               nixpkgs-release = nixpkgsRelease;
               package = packages.acmsl-licdata-iac-infrastructure-python313;
