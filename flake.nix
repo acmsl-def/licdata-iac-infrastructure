@@ -192,6 +192,7 @@
               acmslLicdataArtifactEvents = acmsl-licdata-artifact-events.version;
               acmslLicdataArtifactEventsInfrastructure = acmsl-licdata-artifact-events-infrastructure.version;
               acmslLicdataIacDomain = acmsl-licdata-iac-domain.version;
+              azureIdentity = python.pkgs.azure-identity.version;
               azureMgmtResource = python.pkgs.azure-mgmt-resource.version;
               pythonedaSharedIacEvents = pythoneda-shared-iac-events.version;
               pythonedaSharedIacEventsInfrastructure = pythoneda-shared-iac-events-infrastructure.version;
@@ -225,6 +226,7 @@
               acmsl-licdata-artifact-events
               acmsl-licdata-artifact-events-infrastructure
               acmsl-licdata-iac-domain
+              azure-identity
               azure-mgmt-resource
               pythoneda-shared-iac-events
               pythoneda-shared-iac-events-infrastructure
