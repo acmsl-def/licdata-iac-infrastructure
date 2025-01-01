@@ -194,6 +194,7 @@
               acmslLicdataIacDomain = acmsl-licdata-iac-domain.version;
               azureIdentity = python.pkgs.azure-identity.version;
               azureMgmtResource = python.pkgs.azure-mgmt-resource.version;
+              pygobject3 = python.pkgs.pygobject3.version;
               pythonedaSharedIacEvents = pythoneda-shared-iac-events.version;
               pythonedaSharedIacEventsInfrastructure = pythoneda-shared-iac-events-infrastructure.version;
               pythonedaSharedIacPulumiAzure = pythoneda-shared-iac-pulumi-azure.version;
@@ -228,6 +229,7 @@
               acmsl-licdata-iac-domain
               azure-identity
               azure-mgmt-resource
+              pygobject3
               pythoneda-shared-iac-events
               pythoneda-shared-iac-events-infrastructure
               pythoneda-shared-iac-pulumi-azure
