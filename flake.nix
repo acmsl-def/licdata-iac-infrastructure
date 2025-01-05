@@ -48,7 +48,7 @@
       inputs.pythoneda-shared-iac-events.follows = "pythoneda-shared-iac-events";
       inputs.pythoneda-shared-iac-pulumi-azure.follows = "pythoneda-shared-iac-pulumi-azure";
       inputs.pythoneda-shared-iac-shared.follows = "pythoneda-shared-iac-shared";
-      url = "github:acmsl-def/licdata-iac-domain/0.0.29";
+      url = "github:acmsl-def/licdata-iac-domain/0.0.30";
     };
     flake-utils.url = "github:numtide/flake-utils/v1.0.0";
     nixpkgs.url = "github:NixOS/nixpkgs/24.05";
@@ -136,8 +136,8 @@
       let
         org = "acmsl";
         repo = "licdata-iac-infrastructure";
-        version = "0.0.19";
-        sha256 = "1s7pvfh6vrg6rbcp1fkpai3r562fl6dq9smy6h3n93q8c9j8p9g2";
+        version = "0.0.20";
+        sha256 = "0pimi161aqr1ygizxsipvc9xrz1mmvff62rwrs4f42rd9711ix87";
         pname = "${org}-${repo}";
         pythonpackage = "org.acmsl.iac.licdata.infrastructure";
         package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;

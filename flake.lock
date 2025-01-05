@@ -125,16 +125,16 @@
         "pythoneda-shared-runtime-secrets-events": "pythoneda-shared-runtime-secrets-events"
       },
       "locked": {
-        "lastModified": 1735981534,
-        "narHash": "sha256-euGw1WWEPKQXH1ASjYfQzcPriG43BN6367CjNz0T69M=",
+        "lastModified": 1736103143,
+        "narHash": "sha256-seazSmSa/qcSiUUPXeNtWAxFIv1lx13TeF/TWK5BR74=",
         "owner": "acmsl-def",
         "repo": "licdata-iac-domain",
-        "rev": "e1dfcdbead7d4aee52947cba07a001aedfc737f0",
+        "rev": "ada47db19a7bfc3c48a21a25df23dde5f32ae67b",
         "type": "github"
       },
       "original": {
         "owner": "acmsl-def",
-        "ref": "0.0.29",
+        "ref": "0.0.30",
         "repo": "licdata-iac-domain",
         "type": "github"
       }
