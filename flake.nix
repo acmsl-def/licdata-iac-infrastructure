@@ -246,22 +246,38 @@
             # pythonImportsCheck = [ pythonpackage ];
 
             unpackPhase = ''
-              cp -r ${src} .
-              sourceRoot=$(ls | grep -v env-vars)
-              chmod -R +w $sourceRoot
-              cp ${pyprojectToml} $sourceRoot/pyproject.toml
+              command cp -r ${src} .
+              sourceRoot=$(command ls | command grep -v env-vars)
+              command chmod -R +w $sourceRoot
+              command cp ${pyprojectToml} $sourceRoot/pyproject.toml
             '';
 
-            postInstall = ''
-              pushd /build/$sourceRoot
-              for f in $(find . -name '__init__.py'); do
+            postInstall = with python.pkgs; ''
+              command pushd /build/$sourceRoot
+              for f in $(command find . -name '__init__.py'); do
                 if [[ ! -e $out/lib/python${pythonMajorMinorVersion}/site-packages/$f ]]; then
-                  cp $f $out/lib/python${pythonMajorMinorVersion}/site-packages/$f;
+                  command cp $f $out/lib/python${pythonMajorMinorVersion}/site-packages/$f;
                 fi
               done
-              popd
-              mkdir $out/dist
-              cp dist/${wheelName} $out/dist
+              command popd
+              command mkdir -p $out/dist $out/deps/flakes $out/deps/nixpkgs
+              command cp dist/${wheelName} $out/dist
+              for dep in ${acmsl-licdata-artifact-events} ${acmsl-licdata-artifact-events-infrastructure} ${acmsl-licdata-iac-domain} ${pythoneda-shared-iac-events} ${pythoneda-shared-iac-events-infrastructure} ${pythoneda-shared-iac-pulumi-azure} ${pythoneda-shared-iac-shared} ${pythoneda-shared-pythonlang-banner} ${pythoneda-shared-pythonlang-domain} ${pythoneda-shared-pythonlang-infrastructure} ${pythoneda-shared-runtime-secrets-events} ${pythoneda-shared-runtime-secrets-events-infrastructure}; do
+                command cp -r $dep/dist/* $out/deps || true
+                if [ -e $dep/deps ]; then
+                  command cp -r $dep/deps/* $out/deps || true
+                fi
+                METADATA=$dep/lib/python${pythonMajorMinorVersion}/site-packages/*.dist-info/METADATA
+                NAME="$(command grep -m 1 '^Name: ' $METADATA | command cut -d ' ' -f 2)"
+                VERSION="$(command grep -m 1 '^Version: ' $METADATA | command cut -d ' ' -f 2)"
+                command ln -s $dep $out/deps/flakes/$NAME-$VERSION || true
+              done
+              for nixpkgsDep in ${azure-identity} ${azure-mgmt-resource} ${pygobject3} ${pulumi} ${pulumi-azure-native}; do
+                METADATA=$nixpkgsDep/lib/python${pythonMajorMinorVersion}/site-packages/*.dist-info/METADATA
+                NAME="$(command grep -m 1 '^Name: ' $METADATA | command cut -d ' ' -f 2)"
+                VERSION="$(command grep -m 1 '^Version: ' $METADATA | command cut -d ' ' -f 2)"
+                command ln -s $nixpkgsDep $out/deps/nixpkgs/$NAME-$VERSION || true
+              done
             '';
 
             meta = with pkgs.lib; {
